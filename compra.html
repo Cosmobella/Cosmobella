@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compra | Cosmobella</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="compra.css">
+</head>
+
+<body>
+
+<div class="side-bg left"></div>
+<div class="side-bg right"></div>
+
+<div class="page-content">
+
+<header class="navbar">
+
+<h2 class="logo">Cosmobella</h2>
+
+<div class="menu-toggle" id="menu-toggle">
+☰
+</div>
+
+<nav id="nav-menu">
+<a href="index.html">Inicio</a>
+<a href="producto.html">Producto</a>
+<a href="ciencia.html">Ciencia y beneficios</a>
+<a href="sobre.html">Sobre nosotros</a>
+<a href="compra.html">Compra</a>
+</nav>
+
+</header>
+
+<section class="hero-center">
+
+<h1>Adquiere tu Cosmobella hoy</h1>
+
+<p>
+Integra bienestar natural a tu rutina diaria con una presentación práctica y accesible.
+</p>
+
+<img src="img/Producto.png" alt="Producto Cosmobella">
+
+</section>
+
+
+<section class="product-box">
+
+<h2>Cosmobella – Gomitas de bienestar natural</h2>
+
+<div class="form-fields">
+
+  <input
+    type="text"
+    id="nombre"
+    placeholder="Nombre completo"
+    required
+  >
+
+  <textarea
+    id="direccion"
+    placeholder="Dirección de entrega"
+    rows="3"
+    required
+  ></textarea>
+
+</div>
+
+
+<!-- GRAMOS -->
+
+<div class="selector">
+
+<label>Selecciona el tamaño del paquete</label>
+
+<select id="gramos">
+
+<option value="17.5">17.5 g — $15 MXN</option>
+
+<option value="37.5">37.5 g — $25 MXN</option>
+
+<option value="77.5">77.5 g — $55 MXN</option>
+
+</select>
+
+</div>
+
+
+<!-- CANTIDAD -->
+
+<div class="quantity">
+
+<button onclick="cambiarCantidad(-1)">−</button>
+
+<input
+type="number"
+id="cantidad"
+value="1"
+min="1"
+onchange="actualizarTotal()"
+>
+
+<button onclick="cambiarCantidad(1)">+</button>
+
+</div>
+
+
+<!-- TOTAL -->
+
+<p class="total">
+Total: <span id="total"></span>
+</p>
+
+
+<button class="btn big" onclick="enviarWhatsApp()">
+Finalizar compra
+</button>
+
+</section>
+
+
+<footer class="footer">
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="producto.html">Producto</a>
+    <a href="ciencia.html">Ciencia y beneficios</a>
+    <a href="sobre.html">Sobre nosotros</a>
+    <a href="compra.html">Comprar</a>
+  </nav>
+</footer>
+
+</div>
+
+
+
+<script>
+
+const precios = {
+  "17.5": 15,
+  "37.5": 25,
+  "77.5": 55
+};
+
+function actualizarTotal(){
+
+  let gramos = document.getElementById("gramos").value;
+  let cantidad = document.getElementById("cantidad").value;
+
+  let precio = precios[gramos];
+
+  let total = precio * cantidad;
+
+  document.getElementById("total").textContent =
+  "$" + total + " MXN";
+
+}
+
+function cambiarCantidad(valor){
+
+  let input = document.getElementById("cantidad");
+
+  let nueva = parseInt(input.value) + valor;
+
+  if(nueva < 1) nueva = 1;
+
+  input.value = nueva;
+
+  actualizarTotal();
+
+}
+
+
+/* actualizar cuando cambien los gramos */
+
+document.getElementById("gramos").addEventListener(
+  "change",
+  actualizarTotal
+);
+
+</script>
+
+<script>
+
+const numeroWhats = "5217731863137"; // tu número
+
+function enviarWhatsApp(){
+
+let nombre = document.getElementById("nombre").value.trim();
+let direccion = document.getElementById("direccion").value.trim();
+
+if(nombre === "" || direccion === ""){
+  alert("Por favor escribe tu nombre y dirección.");
+  return;
+}
+
+let gramos = document.getElementById("gramos").value;
+let cantidad = document.getElementById("cantidad").value;
+
+let precio = precios[gramos];
+let total = precio * cantidad;
+
+let mensaje =
+"Hola, quiero comprar Cosmobella%0A%0A" +
+
+"Soy: " + nombre + "%0A" +
+
+"Mi dirección: " + direccion + "%0A%0A" +
+
+"Tamaño: " + gramos + " g%0A" +
+
+"Cantidad: " + cantidad + "%0A" +
+
+"Total: $" + total + " MXN";
+
+let url = "https://wa.me/" + numeroWhats + "?text=" + mensaje;
+
+window.open(url, "_blank");
+
+}
+
+</script>
+
+<script>
+
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>

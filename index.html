@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmobella</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Inicio.css">
+</head>
+<body>
+
+  <!-- FONDOS LATERALES -->
+  <div class="side-bg left"></div>
+  <div class="side-bg right"></div>
+
+  <div class="page-content">
+
+    <!-- NAV -->
+    <header class="navbar">
+
+      <h2 class="logo">Cosmobella</h2>
+
+      <div class="menu-toggle" id="menu-toggle">
+        ☰
+      </div>
+
+      <nav id="nav-menu">
+        <a href="index.html">Inicio</a>
+        <a href="producto.html">Producto</a>
+        <a href="ciencia.html">Ciencia y beneficios</a>
+        <a href="sobre.html">Sobre nosotros</a>
+        <a href="compra.html">Compra</a>
+      </nav>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Bienestar natural en cada gomita</h1>
+
+        <p>
+          Suplemento alimenticio con extracto natural de flor
+          <strong>Cosmos bipinnatus</strong>, diseñado para apoyar el bienestar
+          general y contribuir al equilibrio del cuerpo.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="compra.html" class="btn primary">Comprar ahora</a>
+          <a href="producto.html" class="btn secondary">Conoce el producto</a>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <img src="img/Producto.png" alt="Producto Cosmobella">
+      </div>
+    </section>
+
+    <!-- ¿QUÉ ES? -->
+    <section class="split">
+      <div class="split-img">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Cosmos_bipinnatus_pink%2C_Burdwan%2C_West_Bengal%2C_India_10_01_2013.jpg" alt="Flor Cosmos bipinnatus">
+      </div>
+
+      <div class="split-text">
+        <h2>¿Qué es Cosmobella?</h2>
+
+        <p>
+          Cosmobella es un complemento alimenticio en forma de gomita
+          elaborado con extracto natural de flor Cosmos bipinnatus.
+          Nuestra fórmula está diseñada para apoyar el bienestar general
+          de manera práctica y agradable.
+        </p>
+
+        <p>
+          Gracias a sus propiedades antioxidantes y su contribución al
+          equilibrio natural del cuerpo, Cosmobella se convierte en una
+          opción accesible para quienes buscan integrar bienestar a su
+          rutina diaria.
+        </p>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="benefits">
+      <h2>Beneficios que acompañan tu bienestar</h2>
+
+      <div class="benefits-grid">
+
+        <div class="card">
+          <h3>Antioxidante</h3>
+          <p>Ayuda a neutralizar radicales libres y proteger las células frente al estrés oxidativo.</p>
+        </div>
+
+        <div class="card">
+          <h3>Apoyo al equilibrio inflamatorio</h3>
+          <p>Contribuye al balance natural de los procesos inflamatorios del cuerpo.</p>
+        </div>
+
+        <div class="card">
+          <h3>Bienestar integral</h3>
+          <p>Ideal para acompañar etapas hormonales y momentos de mayor desgaste físico o estrés cotidiano.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIR -->
+    <section class="split reverse">
+      <div class="split-text">
+        <h2>¿Por qué elegir Cosmobella?</h2>
+
+        <ul>
+          <li>Flor poco utilizada en la industria, con gran potencial natural.</li>
+          <li>Procesos alineados con lineamientos oficiales de calidad e higiene.</li>
+          <li>Enfoque en bienestar femenino y general.</li>
+          <li>Presentación práctica, agradable y fácil de consumir.</li>
+          <li>Precio accesible.</li>
+        </ul>
+      </div>
+
+      <div class="split-img">
+        <img src="img/Nombre.jpeg" alt="">
+      </div>
+    </section>
+
+    <!-- CONFIANZA -->
+    <section class="split">
+      <div class="split-img">
+        <img src="img/gomitas.jpeg" alt="">
+      </div>
+
+      <div class="split-text">
+        <h2>Confianza y calidad</h2>
+
+        <p>
+          Nuestro proceso de fabricación sigue lineamientos de higiene y calidad
+          establecidos en normativas oficiales, asegurando un producto confiable
+          y seguro para el consumidor.
+        </p>
+
+        <p>
+          Cosmobella prioriza la transparencia, la supervisión adecuada de procesos
+          y el cumplimiento de estándares que respaldan cada etapa de producción.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+      <h2>Empieza tu camino hacia el bienestar hoy</h2>
+      <p>Cosmobella está diseñada para integrarse fácilmente a tu día a día.</p>
+
+      <a href="compra.html" class="btn primary big">Comprar ahora</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="producto.html">Producto</a>
+        <a href="ciencia.html">Ciencia y Beneficios</a>
+        <a href="sobre.html">Sobre Nosotros</a>
+        <a href="compra.html">Comprar</a>
+      </nav>
+
+    </footer>
+
+  </div>
+
+  <script>
+
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-menu");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+  </script>
+</body>
+</html>
